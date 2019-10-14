@@ -32,9 +32,22 @@ sudo ./SFDS
 ```
 
 
-# Use the Snort Software
+# Check install and use the Snort Software
 
+After the install you will see :
+```
 
+   ,,_     -*> Snort! <*-
+  o"  )~   Version 2.9.15 GRE (Build 7)
+   ''''    By Martin Roesch & The Snort Team: http://www.snort.org/contact#team
+           Copyright (C) 2014-2018 Cisco and/or its affiliates. All rights reserved.
+           Copyright (C) 1998-2013 Sourcefire, Inc., et al.
+           Using libpcap version 1.8.1
+           Using PCRE version: 8.39 2016-06-14
+           Using ZLIB version: 1.2.11
+
+```
+Now, all is left for is to chose on what interface will you like Snort to monitor.
 
 If you are not sure which interface to use, check for the public IPv4 address of your server in the Network settings. You can also use the following commands on your server according to your distribution.
 
