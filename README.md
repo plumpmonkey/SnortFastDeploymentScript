@@ -21,6 +21,7 @@ Simply create a working folder then clone this git.
 sudo mkdir your-folder
 cd your-folder
 sudo git clone https://github.com/WillyWeiss/SnortFastDeploymentScript.git
+sudo tar xvfz sourcecode.tar.gz
 ```
 
 ## Use the installer
