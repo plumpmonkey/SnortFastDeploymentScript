@@ -16,7 +16,7 @@ Clone the git repo and enter the directory
 
 ```bash
 git clone git clone https://github.com/plumpmonkey/SnortFastDeploymentScript.git
-cd SnortFastDeploymentScript.git
+cd SnortFastDeploymentScript
 ```
 
 ## Use the installer
