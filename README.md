@@ -15,7 +15,7 @@ This script is used by the UWE Bristol - Security and Forensics module to instal
 Clone the git repo and enter the directory
 
 ```bash
-git clone git clone https://github.com/plumpmonkey/SnortFastDeploymentScript.git
+git clone https://github.com/plumpmonkey/SnortFastDeploymentScript.git
 cd SnortFastDeploymentScript
 ```
 
