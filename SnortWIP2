@@ -1,0 +1,234 @@
+#!/bin/bash
+clear
+source ./progress_bar.sh
+printf -- '\033[33m Acquiring prerequisites package needed for install \033[0m\n';
+setup_scroll_area
+sleep 1
+printf -- '\033[33m Checking for GCC\033[0m\n';
+sleep 0.5
+apt-cache policy gcc | grep none &> /dev/null
+                if [ $? == 0 ];
+                then
+                printf -- '\033[33m GCC NOT FOUND. INSTALLING....  \033[0m\n';
+                sudo apt-get install -y gcc 
+                draw_progress_bar 1
+                sleep 1
+                else
+                printf -- '\033[33m GCC package is present in the system \033[0m\n';
+                sleep 0.5
+                printf -- '\033[33m Checking for MAKE package \033[0m\n';
+                fi
+
+                
+apt-cache policy make | grep none &> /dev/null
+                if [ $? == 0 ];
+                then
+                  printf -- '\033[33m MAKE is NOT installed. INSTALLING... \033[0m\n';
+                  sudo apt-get install -y make 
+                  draw_progress_bar 2
+                  sleep 1
+                else
+                printf -- '\033[33m MAKE package is present in the system \033[0m\n';
+                sleep 0.5
+                printf -- '\033[33m Checking for LUAJIT \033[0m\n';
+                fi  
+                  
+                  
+apt-cache policy libluajit-5.1 | grep none &> /dev/null
+                if [ $? == 0 ];
+                then
+                  printf -- '\033[33m LUAJIT is NOT installed. INSTALLING... \033[0m\n';
+                  printf -- '\033[33m OPENSSL plus additional additional libraries \033[0m\n';
+                  sudo apt-get install -y libpcre3-dev 
+                  draw_progress_bar 3
+                  sleep 1
+                  sudo apt-get install -y zlib1g-dev 
+                  draw_progress_bar 4
+                  sleep 1
+                  sudo apt-get install -y libluajit-5.1-dev 
+                  draw_progress_bar 5
+                  sleep 1
+                  sudo apt-get install -y libpcap-dev 
+                  draw_progress_bar 6
+                  sleep 1
+                  sudo apt-get install -y openssl
+                  draw_progress_bar 7
+                  sleep 1
+                  sudo apt-get install -y libssl-dev 
+                  draw_progress_bar 8
+                  sleep 1
+                  sudo apt-get install -y libnghttp2-dev 
+                  draw_progress_bar 9
+                  sleep 1
+                  sudo apt-get install -y libdumbnet-dev 
+                  draw_progress_bar 10
+                  sleep 1
+                else
+                printf -- '\033[33m LUAJIT package is present in the system \033[0m\n';
+                sleep 0.5
+                printf -- '\033[33m Checking/installing OpenSSL and additional libraries \033[0m\n';
+                sleep 0.5
+                sudo apt-get install -y libpcre3-dev 
+                  draw_progress_bar 3
+                  sleep 1
+                  sudo apt-get install -y zlib1g-dev 
+                  draw_progress_bar 4
+                  sleep 1
+                  draw_progress_bar 5
+                  sleep 1
+                  sudo apt-get install -y libpcap-dev 
+                  draw_progress_bar 6
+                  sleep 1
+                  sudo apt-get install -y openssl
+                  draw_progress_bar 7
+                  sleep 1
+                  sudo apt-get install -y libssl-dev 
+                  draw_progress_bar 8
+                  sleep 1
+                  sudo apt-get install -y libnghttp2-dev 
+                  draw_progress_bar 9
+                  sleep 1
+                  sudo apt-get install -y libdumbnet-dev 
+                  draw_progress_bar 10
+                  sleep 1
+                fi
+                
+printf -- '\033[33m Checking/Installing BISON \033[0m\n';
+sudo apt-get install -y bison 
+draw_progress_bar 11
+sleep 1
+printf -- '\033[33m Checking/Installing FLEX \033[0m\n';
+sudo apt-get install -y flex 
+draw_progress_bar 12
+sleep 1
+sudo apt-get install -y libdnet 
+draw_progress_bar 13
+sleep 1
+clear
+printf -- '\033[32m All prerequisites package are installed  \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  gcc              \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  make             \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  libpcre3-dev     \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  zlib1g-dev       \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  libluajit-5.1-dev\033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  libpcap-dev      \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  openssl          \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  libssl-dev       \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  libnghttp2-dev   \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  libdumbnet-dev   \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  bison            \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  flex             \033[0m\n';
+sleep 0.5
+printf -- '\033[32m[OK] -->  libdnet          \033[0m\n';
+draw_progress_bar 14
+sleep 1
+printf -- '\033[33m INSTALLING DAQ 2.0.6 \033[0m\n';
+sleep 2
+sudo wget https://snort.org/downloads/snort/daq-2.0.6.tar.gz
+draw_progress_bar 15
+sleep 0.5
+sudo tar xvfz daq-2.0.6.tar.gz
+draw_progress_bar 14
+sleep 0.5
+cd daq-2.0.6/
+sudo ./configure
+draw_progress_bar 15
+sleep 0.5
+sudo make
+draw_progress_bar 16
+sleep 0.5
+sudo make install
+draw_progress_bar 25
+sleep 0.5
+printf -- '\033[32m DAQ 2.0.6 INSTALLED \033[0m\n';
+sleep2
+clear 
+printf -- '\033[33m INSTALLING SNORT  \033[0m\n';
+cd ..
+sudo wget https://www.snort.org/downloads/snort/snort-2.9.15.tar.gz
+draw_progress_bar 27
+sleep 0.5
+sudo tar -xvzf snort-2.9.15.tar.gz
+draw_progress_bar 29
+sleep 0.5
+cd snort-2.9.15
+draw_progress_bar 30
+sleep 0.5
+sudo ./configure --enable-sourcefire 
+draw_progress_bar 35
+sleep 0.5
+sudo make 
+draw_progress_bar 40
+sleep 0.5
+sudo make install
+draw_progress_bar 50
+sleep 0.5
+clear
+printf -- '\033[32m SNORT  INSTALLED \033[0m\n';
+draw_progress_bar 50
+sleep 0.5
+clear
+printf -- '\033[33m SETUP SNORT  \033[0m\n';
+sudo ldconfig
+sudo ln -s /usr/local/bin/snort /usr/sbin/snort
+printf -- '\033[33m CREATING SNORT USER \033[0m\n';
+sudo groupadd snort
+sudo useradd snort -r -s /sbin/nologin -c SNORT_IDS -g snort
+draw_progress_bar 60
+sleep 0.5
+clear
+sudo mkdir -p /etc/snort/rules
+sudo mkdir /var/log/snort
+sudo mkdir /usr/local/lib/snort_dynamicrules
+sudo chmod -R 5775 /etc/snort
+sudo chmod -R 5775 /var/log/snort
+sudo chmod -R 5775 /usr/local/lib/snort_dynamicrules
+sudo chown -R snort:snort /etc/snort
+sudo chown -R snort:snort /var/log/snort
+sudo chown -R snort:snort /usr/local/lib/snort_dynamicrules
+#sudo touch /etc/snort/rules/white_list.rules
+#sudo touch /etc/snort/rules/black_list.rules
+#sudo touch /etc/snort/rules/local.rules
+cd ..
+cd snort-2.9.15/etc/
+sudo cp *.conf /etc/snort
+sudo cp *.config /etc/snort
+sudo cp *.map /etc/snort
+cd ..
+cd ..
+sudo cp /etc/snort/snort.conf /etc/snort/snort.2.9.15.original
+sudo cp snort.original /etc/snort/snort.conf
+draw_progress_bar 85
+cd legendary
+sudo cp -R * /etc/snort/
+draw_progress_bar 95
+sudo touch /etc/snort/rules/white_list.rules
+sudo touch /etc/snort/rules/black_list.rules
+sudo touch /etc/snort/rules/local.rules
+printf -- '\033[33m SNORT CONFIGURATION DONE \033[0m\n';
+sleep 0.5
+clear
+sudo snort -T -c /etc/snort/snort.conf
+draw_progress_bar 100
+sleep  2
+clear
+snort --version
+exit
+
+
+
+
+
+

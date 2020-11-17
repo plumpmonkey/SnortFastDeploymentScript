@@ -2,12 +2,12 @@
 
 ## What it is, and why/when to use it
 
-SFDS is an UNOFFICIAL deployment script for Snort 2.9.15. If other scripts, more advance then this one, will install snort but you will need to configure it and add your own rules, "SFDS" will not only install Snort but will place some basic rules in place so you can immediately start your security system.
+SFDS is an UNOFFICIAL deployment script for Snort 2.9.16 on Kali2020.3 distro. Other scripts may install snort but you will need to configure it and add your own rules, "SFDS" will not only install Snort but will place some basic rules in place so you can immediately start your security system.
 
 This script can be very useful for the fallowing:
- > Learning Purposes (you what to learn more about security, and Snort is your choice)
+> Learning Purposes (you what to learn more about security, and Snort is your choice)
 
->Home fast security. (you will like to try Snort for some extra protection and you have an old laptop/pc to spare/dedicate)
+> Home fast security. (you will like to try Snort for some extra protection and you have an old laptop/pc to spare/dedicate)
 
 
 
@@ -15,13 +15,11 @@ This script can be very useful for the fallowing:
 # Installation
 
 ## Get the files
-Simply create a working folder then clone this git.
+Clone the git repo and enter the directory
 
 ```bash
-sudo mkdir your-folder
-cd your-folder
-sudo git clone https://github.com/WillyWeiss/SnortFastDeploymentScript.git
-sudo tar xvfz sourcecode.tar.gz
+git clone git clone https://github.com/plumpmonkey/SnortFastDeploymentScript.git
+cd SnortFastDeploymentScript.git
 ```
 
 ## Use the installer
