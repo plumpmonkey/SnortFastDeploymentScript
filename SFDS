@@ -27,7 +27,8 @@ printf -- '\033[33m[?] -->  libssl-dev       \033[0m\n';
 sleep 0.2        
 printf -- '\033[33m[?] -->  pkgconfig        \033[0m\n';
 sleep 0.2        
-
+sudo apt update
+sleep 0.2
 printf -- '\033[33m Checking/Installing FLEX \033[0m\n';
 sudo apt-get install -y flex 
 draw_progress_bar 1
