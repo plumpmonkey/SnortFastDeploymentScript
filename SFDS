@@ -181,7 +181,6 @@ printf -- '\033[33m SNORT CONFIGURATION DONE \033[0m\n';
 sleep 0.5
 clear
 sudo snort -T -c /etc/snort/snort.conf
-draw_progress_bar 100
 sleep  2
 snort --version
 exit
