@@ -6,12 +6,7 @@ SFDS is an UNOFFICIAL deployment script for Snort 2.9.16.1 on Kali2020.3 distro.
 
 This script is based on the script by WillyWeiss, but modified the dependancy list to install on Kali2020.3 distro
 
-This script can be very useful for the fallowing:
-> Learning Purposes (you what to learn more about security, and Snort is your choice)
-
-> Home fast security. (you will like to try Snort for some extra protection and you have an old laptop/pc to spare/dedicate)
-
-
+This script is used by the UWE Bristol - Security and Forensics module to install Snort on a Kali distribution
 
    
 # Installation
@@ -27,12 +22,11 @@ cd SnortFastDeploymentScript.git
 ## Use the installer
 
 ```
-sudo chmod +x SFDS
 sudo ./SFDS
 ```
 
 
-# Check install and use the Snort Software
+## Check install and use the Snort Software
 
 After the install you will see :
 ```
@@ -47,6 +41,20 @@ After the install you will see :
            Using ZLIB version: 1.2.11
 
 ```
+# Use Snort to analyse a PCAP file
+
+```
+snort -c /etc/snort/snort.conf -r ‘path_to_your_pcap’ -b -l ‘path_to_save_the_output’
+```
+
+Snort has created two file "alert" and "snort.log.xxxxxxxx". You are interested in the alerts. Open the alerts file with a text editor (or from your terminal in case you prefer terminal) and examine the alerts Snort produced.
+
+Combine this information with the information you got from Wireshark.
+
+# Using Snort to monitor an interface
+
+The following information is not required for the SFT lab session, but left here for background information
+
 Now, all is left for is to chose on what interface will you like Snort to monitor.
 
 If you are not sure which interface to use, check for the public IPv4 address of your server in the Network settings. You can also use the following commands on your server according to your distribution.
