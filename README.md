@@ -4,7 +4,7 @@
 
 SFDS is an UNOFFICIAL deployment script for Snort 2.9.16.1 on Kali2020.3 distro. Other scripts may install snort but you will need to configure it and add your own rules, "SFDS" will not only install Snort but will place some basic rules in place so you can immediately start your security system.
 
-This script is based on the script by WillyWeiss, but modified the dependancy list to install on Kali2020.3 distro
+This script is based on the script by WillyWeiss (https://github.com/WillyWeiss/SnortFastDeploymentScript), but modified the dependancy list to install on Kali2020.3 distro and adjusted the snort config and ruleset configuration so that it did not error and the ruleset was more suitable for our purposes.
 
 This script is used by the UWE Bristol - Security and Forensics module to install Snort on a Kali distribution
 
