@@ -2,7 +2,9 @@
 
 ## What it is, and why/when to use it
 
-SFDS is an UNOFFICIAL deployment script for Snort 2.9.16 on Kali2020.3 distro. Other scripts may install snort but you will need to configure it and add your own rules, "SFDS" will not only install Snort but will place some basic rules in place so you can immediately start your security system.
+SFDS is an UNOFFICIAL deployment script for Snort 2.9.16.1 on Kali2020.3 distro. Other scripts may install snort but you will need to configure it and add your own rules, "SFDS" will not only install Snort but will place some basic rules in place so you can immediately start your security system.
+
+This script is based on the script by WillyWeiss, but modified the dependancy list to install on Kali2020.3 distro
 
 This script can be very useful for the fallowing:
 > Learning Purposes (you what to learn more about security, and Snort is your choice)
@@ -36,11 +38,11 @@ After the install you will see :
 ```
 
    ,,_     -*> Snort! <*-
-  o"  )~   Version 2.9.15 GRE (Build 7)
+  o"  )~   Version 2.9.16.1 GRE (Build 140) 
    ''''    By Martin Roesch & The Snort Team: http://www.snort.org/contact#team
-           Copyright (C) 2014-2018 Cisco and/or its affiliates. All rights reserved.
+           Copyright (C) 2014-2020 Cisco and/or its affiliates. All rights reserved.
            Copyright (C) 1998-2013 Sourcefire, Inc., et al.
-           Using libpcap version 1.8.1
+           Using libpcap version 1.9.1 (with TPACKET_V3)
            Using PCRE version: 8.39 2016-06-14
            Using ZLIB version: 1.2.11
 

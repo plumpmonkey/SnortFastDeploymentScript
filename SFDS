@@ -183,7 +183,6 @@ clear
 sudo snort -T -c /etc/snort/snort.conf
 draw_progress_bar 100
 sleep  2
-clear
 snort --version
 exit
 
