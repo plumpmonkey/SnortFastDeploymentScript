@@ -127,7 +127,7 @@ sleep 0.2
 sudo tar -xvzf snort-2.9.17.tar.gz
 draw_progress_bar 29
 sleep 0.2
-cd snort-2.9.16.1
+cd snort-2.9.17
 draw_progress_bar 30
 sleep 0.2
 sudo ./configure --enable-sourcefire 
@@ -163,7 +163,7 @@ sudo chown -R snort:snort /etc/snort
 sudo chown -R snort:snort /var/log/snort
 sudo chown -R snort:snort /usr/local/lib/snort_dynamicrules
 cd ..
-cd snort-2.9.16.1/etc/
+cd snort-2.9.17/etc/
 sudo cp *.conf /etc/snort
 sudo cp *.config /etc/snort
 sudo cp *.map /etc/snort
