@@ -121,10 +121,10 @@ sleep2
 clear 
 printf -- '\033[33m INSTALLING SNORT  \033[0m\n';
 cd ..
-sudo wget https://www.snort.org/downloads/snort/snort-2.9.16.1.tar.gz
+sudo wget https://www.snort.org/downloads/snort/snort-2.9.17.tar.gz
 draw_progress_bar 27
 sleep 0.2
-sudo tar -xvzf snort-2.9.16.1.tar.gz
+sudo tar -xvzf snort-2.9.17.tar.gz
 draw_progress_bar 29
 sleep 0.2
 cd snort-2.9.16.1
@@ -169,7 +169,7 @@ sudo cp *.config /etc/snort
 sudo cp *.map /etc/snort
 cd ..
 cd ..
-sudo cp /etc/snort/snort.conf /etc/snort/snort.2.9.16.1.original
+sudo cp /etc/snort/snort.conf /etc/snort/snort.2.9.17.original
 sudo cp snort.original /etc/snort/snort.conf
 draw_progress_bar 85
 cd legendary
